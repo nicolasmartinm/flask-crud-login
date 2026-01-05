@@ -9,7 +9,8 @@ DATABASE_URL = os.environ.get("DATABASE_URL")
 
 # ---------- CONEXIÓN A LA DB ----------
 def get_db_connection():
-    return psycopg2.connect(DATABASE_URL)
+    return psycopg2.connect(DATABASE_URL, sslmode="require")
+
 
 # ---------- RUTA DE PRUEBA ----------
 @app.route("/")
